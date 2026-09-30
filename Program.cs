@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+// run example
+IList<IList<string>> knowledge = [["name", "bob"], ["age", "two"]];
+var result = Solution1807.Evaluate("(name)is(age)yearsold", knowledge);
+
+Console.WriteLine(result);
