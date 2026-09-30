@@ -6,7 +6,7 @@ public static class Solution0001Tests
     [InlineData(new[] {3, 3}, 6, new[] {0, 1})]
     public static void TwoSum_ShouldReturnExpectedResult(int[] nums, int target, int[] expected)
     {
-        var result = Solution.TwoSum(nums, target);
+        var result = Solution0001.TwoSum(nums, target);
         Assert.Equal(expected, result);
     }
 }
