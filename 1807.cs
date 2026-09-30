@@ -1,18 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
 
-using System.Text;
-
-var s = "(name)is(age)yearsold";
-var knowledge = new List<IList<string>> {
-    new List<string> { "name", "bob" },
-    new List<string> { "age", "30" }
-};
-
-
-Console.WriteLine(Evaluate(s, knowledge));
-
-
-static string Evaluate(string s, IList<IList<string>> knowledge) {
+public static string Evaluate(string s, IList<IList<string>> knowledge) 
+{
     // move knowledge into a dictionary
     var dict = new Dictionary<string, string>();
     foreach(var kv in knowledge)
