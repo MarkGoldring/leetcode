@@ -7,15 +7,11 @@ public static class Solution12 {
         // build a queue of digit values
         var q = new List<int>();
         if(num > 999) {
-            q.Add((num / 1000) * 1000);
+            q.Add(num / 1000 * 1000);
             num -= q[^1];
-        }
-        if(num > 99) {
-            q.Add((num / 100) * 100);
-            num -= q[^1];
-        }
+        } if(num > 99) { q.Add(num / 100 * 100); num -= q[^1]; }
         if(num > 9) {
-            q.Add((num / 10) * 10);
+            q.Add(num / 10 * 10);
             num -= q[^1];
         }
         q.Add(num % 10);
