@@ -1,6 +1,7 @@
 ﻿
 // run example
-IList<IList<string>> knowledge = [["name", "bob"], ["age", "two"]];
-var result = Solution1807.Evaluate("(name)is(age)yearsold", knowledge);
+int[] nums = [-1,0,1,2,-1,-4];
+var result = Solution0015.ThreeSum(nums);
+
 
 Console.WriteLine(result);
