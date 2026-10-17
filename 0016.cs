@@ -44,5 +44,8 @@ public static class Solution0016 {
                 right--;
              }
           }
+      }
+
+      return 0;
    }
 }
