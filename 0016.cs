@@ -8,33 +8,41 @@ public static class Solution0016 {
       }
       
       // sort the array smalles to largest
-      //nums.Sort();
+      nums.Sort();
+
+      int n = nums.Length;
+      int result = nums[0] + nums[1] + nums[2]; // initial best guess
 
       // anchor first pointer
-      int minDelta = int.MaxValue;
-      int nearestSum = 0;
-      for(int i = 0; i < nums.Length; i++) 
+      for(int i = 0; i < n - 2; i++) 
       {
-         // anchor second pointer
-         for(int j = 0; j < nums.Length; j++) 
-         {
-            if(j == i) continue;
-            // so we now have i and j that sum to 
-            //var sumij = nums[i] + nums[j];
-            for(int k = 0; k < nums.Length; k++) 
-            {
-               if(k == i || k == j) continue;
-               var sum = nums[i] + nums[j] + nums[k];
-               var delta = Math.Abs(target - sum);
-               if(delta < minDelta)
-               {
-                  minDelta = delta;
-                  nearestSum = sum;
-               }
-            }
-         }
-      }
+          // reste left and right pointers
+          int left = i + 1, right = n - 1;
+          while(left < right) 
+          {
+            // is current sum closer than current result?
+             int sum = nums[i] + nums[left] + nums[right];
+             if(Math.Abs(target - sum) < Math.Abs(target - result))
+             {
+                result = sum;
+             }
+             
+             // check for exact match
+             if(sum == target) 
+             {
+                return target;
+             }
 
-      return nearestSum;
+            // if the sum under target, move left point right 
+             if(sum < target)
+             {
+                left++;
+             }
+             // if the sum is over target, move right point left
+             else
+             {
+                right--;
+             }
+          }
    }
 }
